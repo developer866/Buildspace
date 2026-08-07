@@ -22,5 +22,11 @@ const logSchema = new Schema<ILog>(
   { timestamps: true }
 );
 
+// Speeds up sorting (createdAt) and filtering (method, responseStatus)
+logSchema.index({ createdAt: -1 });
+logSchema.index({ method: 1 });
+logSchema.index({ responseStatus: 1 });
+
+
 const Log: Model<ILog> = mongoose.models.Log || mongoose.model<ILog>('Log', logSchema);
 export default Log;
