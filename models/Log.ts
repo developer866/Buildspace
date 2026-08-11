@@ -9,8 +9,6 @@ export interface ILog extends Document{
     createdAt:Date; 
 }
 
-
-
 const logSchema = new Schema<ILog>(
   {
     method: { type: String, required: true },

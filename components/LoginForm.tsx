@@ -2,12 +2,14 @@
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
+import {box, Flex, Text, chakra, Button, Menu, Portal } from '@chakra-ui/react';
 
 export default function LoginForm() {
   const router = useRouter();
   const { refetchUser } = useAuth();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,6 +41,8 @@ export default function LoginForm() {
       setLoading(false);
     }
   };
+
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
@@ -93,5 +97,15 @@ export default function LoginForm() {
         </p>
       </form>
     </div>
+    
   );
+}
+
+
+const Newform = () =>{
+  return(
+    <Box>
+      <Text>Import </Text>
+    </Box>
+  )
 }
