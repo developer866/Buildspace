@@ -2,7 +2,16 @@
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
-import {box, Flex, Text, chakra, Button, Menu, Portal } from '@chakra-ui/react';
+import {Box, Flex, Text, chakra, Button, Menu, Portal } from '@chakra-ui/react';
+
+
+const New_Form = () => {
+  return (
+    <Box>
+      This is a new Form
+    </Box>
+  )
+}
 
 export default function LoginForm() {
   const router = useRouter();
@@ -45,6 +54,7 @@ export default function LoginForm() {
 
 
   return (
+    <Flex>
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
       <form
         onSubmit={handleSubmit}
@@ -96,16 +106,11 @@ export default function LoginForm() {
           </a>
         </p>
       </form>
-    </div>
-    
+    </div>  
+  </Flex>
   );
 }
 
 
-const Newform = () =>{
-  return(
-    <Box>
-      <Text>Import </Text>
-    </Box>
-  )
-}
+
+
